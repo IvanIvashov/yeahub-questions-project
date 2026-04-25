@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 16px 0;
+  background-color: #fff;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1216px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  gap: 8px;
+  margin-right: 54px;
+
+  & p {
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-weight: 500;
+}
+
+.navLink:hover {
+color: var(--primary-color)
+}
+
+.auth {
+  display: flex;
+  gap: 20px;
+}
+
+.loginBtn {
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.registerBtn {
+  font-size: 18px;
+  font-weight: 500;
+	padding: 11px 28px;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  color: #fff;
+	height: 48px;
+}

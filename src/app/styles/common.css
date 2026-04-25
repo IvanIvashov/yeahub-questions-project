@@ -7,4 +7,9 @@
 body {
 	font-family: 'Manrope', sans-serif;
 	background: #F4F4F4;
+	color:#191919;
+}
+
+a {
+	color: inherit;
 }
