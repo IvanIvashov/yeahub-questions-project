@@ -12,6 +12,9 @@ export const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "/questions", element: <MainContent /> },
       { path: "/details", element: <QuestionDetails /> },
+      { path: "/trainer", element: <QuestionDetails /> },
+      { path: "/materials", element: <QuestionDetails /> },
+      { path: "/skills", element: <QuestionDetails /> },
     ],
   },
 ]);
