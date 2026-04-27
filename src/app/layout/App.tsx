@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
-import Header from "../../widgets/header/Header";
-
+import Header from "../../widgets/header/ui/header/Header";
+import styles from './style.module.css'
 function App() {
   return (
     <>
       <Header />
-			<main>
-				<Outlet/>
-			</main>
-			</>
+      <main className={styles.main}>
+        <Outlet />
+      </main>
+    </>
   );
 }
 
