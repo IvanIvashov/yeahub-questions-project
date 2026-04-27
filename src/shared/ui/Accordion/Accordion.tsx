@@ -2,6 +2,7 @@ import { useState } from "react";
 import iconArrow from "./assets/accordion.svg";
 import content from "./assets/content.png";
 import styles from './style.module.css'
+import { Link } from "react-router-dom";
 
 function Accordion() {
 	  const [toggleArrow, setToggleArrow] = useState(false);
@@ -55,7 +56,9 @@ function Accordion() {
               DOM, которые изменились, вместо перерисовки всего документа.
             </p>
           </div>
-          <button className={styles.detailsBtn}>Подробнее...</button>
+          <Link to={"/details"} className={styles.detailsBtn}>
+            Подробнее...
+          </Link>
         </div>
       )}
     </div>
