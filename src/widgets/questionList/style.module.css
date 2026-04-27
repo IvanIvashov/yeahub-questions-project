@@ -1,0 +1,19 @@
+.questionList {
+  width: 804px;
+  padding: 24px 20px 40px;
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 10px 0 rgba(106, 99, 118, 0.1);
+}
+
+.questionTitle {
+  padding: 0px 10px 16px 0px;
+  border-bottom: 0.5px solid #e8e8e8;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+}

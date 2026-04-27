@@ -1,15 +1,13 @@
 :root {
-	--primary-color: #6a0bff;
-
+  --primary-color: #6a0bff;
 }
 
-
 body {
-	font-family: 'Manrope', sans-serif;
-	background: #F4F4F4;
-	color:#191919;
+  font-family: "Manrope", sans-serif;
+  background: #f4f4f4;
+  color: #191919;
 }
 
 a {
-	color: inherit;
+  color: inherit;
 }
