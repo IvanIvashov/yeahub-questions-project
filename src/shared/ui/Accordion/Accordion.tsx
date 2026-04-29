@@ -5,12 +5,12 @@ import styles from './style.module.css'
 import { Link } from "react-router-dom";
 
 function Accordion() {
-	  const [toggleArrow, setToggleArrow] = useState(false);
+	  const [isOpen, setIsOpen] = useState(false);
 	return (
     <div className={styles.questionAccordion}>
       <div
         className={styles.accordionTitle}
-        onClick={() => setToggleArrow((prev) => !prev)}
+        onClick={() => setIsOpen((prev) => !prev)}
       >
         <svg
           width="8"
@@ -28,11 +28,11 @@ function Accordion() {
           <img
             src={iconArrow}
             alt="arrowAccordion"
-            className={`${styles.btnTransition} ${toggleArrow ? styles.arrowRotate : ""}`}
+            className={`${styles.btnTransition} ${isOpen ? styles.arrowRotate : ""}`}
           />
         </button>
       </div>
-      {toggleArrow && (
+      {isOpen && (
         <div className={styles.questionContent}>
           <div className={styles.ratingAndDifficulty}>
             <p>

@@ -42,6 +42,9 @@
 
 .questionContent {
   padding: 0px 24px 24px;
+  transition:
+    max-height 0.4s ease-in-out,
+    padding 0.4s ease-in-out;
 }
 
 .btnTransition {
