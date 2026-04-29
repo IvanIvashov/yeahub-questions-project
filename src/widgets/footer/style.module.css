@@ -43,25 +43,29 @@ hr {
 .lowerFooter {
   display: flex;
   justify-content: space-between;
-	align-items: center;
-	margin-top: 19px;
+  align-items: center;
+  margin-top: 19px;
 }
 
 .copyright {
-	display: flex;
-	gap: 8px;
+  display: flex;
+  gap: 8px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.27;
   color: #8c8c8c;
-	
 }
 .socials {
-	display: flex;
-		align-items: center;
-		gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.27;
   color: #8c8c8c;
+}
+
+.links {
+  display: flex;
+  gap: 8px;
 }

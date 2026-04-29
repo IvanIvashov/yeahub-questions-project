@@ -14,6 +14,9 @@ function QuestionList() {
       <Accordion />
       <Accordion />
       <Accordion />
+      <div className={styles.pagination}>
+        <h1>пагинация</h1>
+      </div>
     </div>
   );
 }
