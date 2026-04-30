@@ -1,9 +1,9 @@
 import styles from "./style.module.css";
 import type { ItemsProps } from "../model/types";
 
-function ItemsList({ title, items }: ItemsProps) {
+function ItemsList({ title, items, showButton = true }: ItemsProps) {
   return (
-    <div className={styles.specialization}>
+    <div className={styles.itemsSideBar}>
       <p className={styles.title}>{title}</p>
       <div className={styles.specializationList}>
         <ul className={styles.specializationNav}>
@@ -14,7 +14,7 @@ function ItemsList({ title, items }: ItemsProps) {
           ))}
         </ul>
       </div>
-      <button className={styles.linkBtn}>Посмотреть все</button>
+      {showButton && <button className={styles.linkBtn}>Посмотреть все</button>}
     </div>
   );
 }

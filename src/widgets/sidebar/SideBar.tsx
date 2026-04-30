@@ -1,16 +1,15 @@
-import Section from "../../entities/specialization/ui/Section";
+import Section from "../../entities/section/ui/Section";
 import Search from "../../features/search/Search";
 import styles from "./style.module.css";
 
-
 function SideBar() {
   return (
-    <div className={styles.sideBarContent}>
+    <aside className={styles.sideBarContent}>
       <div className={styles.wrapper}>
-       <Search/>
-			 <Section/>
+        <Search />
+        <Section />
       </div>
-    </div>
+    </aside>
   );
 }
 

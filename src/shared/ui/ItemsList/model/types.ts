@@ -9,6 +9,21 @@ export type SkillsCard = {
 };
 
 export type ItemsProps = {
+  title: string,
+  items: { id: number | string; title: string | number }[];
+  showButton?: boolean;
+};
+
+export type DifficultyLevel = {
+	id: number,
+	title: string,
+}
+
+export type Rating = {
+	id: number,
+	title: number | string
+}
+export type Status = {
+  id: number;
   title: string;
-  items: { id: number | string; title: string }[];
 };
