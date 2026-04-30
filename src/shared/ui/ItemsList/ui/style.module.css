@@ -1,0 +1,65 @@
+.specialization {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #474747;
+}
+
+.specializationNav {
+  display: flex;
+  flex-wrap: wrap;
+	margin-top: 8px;
+  gap: 8px;
+  margin-bottom: 14px;
+  width: 100%;
+  max-width: 344px;
+  padding: 0;
+ 
+}
+
+.specializationItem {
+	display: flex;
+	align-items: center;  
+  border: 1px solid #bababa;
+  border-radius: 12px;
+  padding: 6px 12px;
+  width: fit-content;
+  min-height: 42px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #303030;
+  white-space: nowrap;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+	 
+
+  &:hover {
+    border-color: #6a0bff;
+    background-color: #6a0bff;
+    color: #fff;
+  }
+}
+
+
+.linkBtn {
+  font-weight: 400;
+  font-size: 14px;
+  display: inline-block;
+  color: #5509cc;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #5509cc;
+  cursor: pointer;
+  padding: 0;
+	margin-top: 8px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

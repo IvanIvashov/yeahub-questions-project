@@ -1,6 +1,6 @@
 import styles from "./style.module.css";
 import logoSvg from "../../assets/logo.svg";
-import { NAV_ITEMS } from "../../../../shared/config/navigation";
+import { NAV_ITEMS } from "../../config/navigationData";
 import { NavLink, Link } from "react-router-dom";
 import AuthButtons from "../authButtons/AuthButtons";
 
