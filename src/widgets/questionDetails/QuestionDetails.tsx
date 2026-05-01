@@ -1,7 +1,7 @@
 function QuestionDetails() {
 	return (
 		<div>
-			Тут будет подробнее
+			Тут будет подробнее..
 		</div>
 	)
 }

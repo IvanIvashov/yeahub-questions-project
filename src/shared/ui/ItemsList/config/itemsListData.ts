@@ -1,12 +1,6 @@
-import type {
-  SpecializationsCard,
-  DifficultyLevel,
-  SkillsCard,
-  Rating,
-  Status,
-} from "../model/types";
+import type { Items } from "../model/types";
 
-export const SPECIALIZATION_CARD: SpecializationsCard[] = [
+export const SPECIALIZATION_CARD: Items[] = [
   {
     id: 1,
     title: "UI/UX designer",
@@ -29,7 +23,7 @@ export const SPECIALIZATION_CARD: SpecializationsCard[] = [
   },
 ];
 
-export const SKILLS_CARD: SkillsCard[] = [
+export const SKILLS_CARD: Items[] = [
   {
     id: 1,
     title: "Figma",
@@ -52,25 +46,22 @@ export const SKILLS_CARD: SkillsCard[] = [
   },
 ];
 
-export const DIFFICULTY_LEVEL: DifficultyLevel[] = [
+export const DIFFICULTY_LEVEL: Items[] = [
   { id: 1, title: "1-3" },
   { id: 2, title: "4-6" },
   { id: 3, title: "7-8" },
   { id: 4, title: "9-10" },
 ];
 
-export const RATING: Rating[] = [
-	{id: 1, title: 1},
-	{id: 2, title: 2},
-	{id: 3, title: 3},
-	{id: 4, title: 4},
-	{id: 5, title: 5},
-	
-]
-export const STATUS: Status[] = [
-	{id: 1, title: 'Изученные'},
-	{id: 2, title: 'Неизученные'},
-	{id: 3, title: 'Все'},
-
-	
-]
+export const RATING: Items[] = [
+  { id: 1, title: 1 },
+  { id: 2, title: 2 },
+  { id: 3, title: 3 },
+  { id: 4, title: 4 },
+  { id: 5, title: 5 },
+];
+export const STATUS: Items[] = [
+  { id: 1, title: "Изученные" },
+  { id: 2, title: "Неизученные" },
+  { id: 3, title: "Все" },
+];

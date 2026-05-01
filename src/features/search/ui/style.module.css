@@ -1,4 +1,3 @@
-
 .search {
   position: relative;
   flex: 1;
@@ -47,4 +46,17 @@
   &:hover {
     opacity: 0.8;
   }
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  position: absolute;
+  right: 9px;
+  top: 8px;
+  cursor: pointer;
+}
+.closeBtn:hover {
+  opacity: 0.8;
 }
