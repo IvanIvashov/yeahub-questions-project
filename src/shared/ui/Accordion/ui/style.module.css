@@ -3,7 +3,6 @@
   border-radius: 8px;
   padding: 16px 24px;
   box-shadow: 0 4px 10px 0 rgba(106, 99, 118, 0.1);
-  cursor: pointer;
 }
 
 .questionAccordion:hover {
@@ -29,7 +28,7 @@
 .circle {
   width: 8px;
   height: 8px;
-  background-color: #5533ff;
+  background-color: var(--primary-color);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -59,7 +58,7 @@
       width: 17px;
       height: 21px;
       text-align: center;
-      background-color: #6a0bff;
+      background-color: var(--primary-color);
       color: #fff;
     }
   }
@@ -107,5 +106,5 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 1.2;
-  color: #6a0bff;
+  color: var(--primary-color);
 }

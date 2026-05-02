@@ -1,8 +1,8 @@
-import Accordion from "../../../shared/ui/Accordion/ui/Accordion";
-import Pagination from "../../../features/pagination/ui/Pagination";
+import { Accordion } from "@shared/ui/Accordion";
+import { Pagination } from "@features/pagination";
+import { QuestionError } from "@features/questionError";
+import { useQuestions } from "@widgets/questionList";
 import styles from "./style.module.css";
-import { useQuestions } from "../model/hook/useQuestion";
-import QuestionError from "../../../features/questionError/ui/QuestionError";
 
 function QuestionList() {
   const { questions, loading, error } = useQuestions();
@@ -17,7 +17,7 @@ function QuestionList() {
         </div>
 
         {questions.map((question) => (
-          <Accordion key={question.id} question={question} img={false} />
+          <Accordion key={question.id} question={question} />
         ))}
       </div>
       <div className={styles.pagination}>

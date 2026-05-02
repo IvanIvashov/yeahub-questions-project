@@ -1,6 +1,6 @@
+import { Button } from "@/shared";
 import styles from "./style.module.css";
 import errorPage from "../assets/errorPage.svg";
-import Button from "../../../shared/ui/Button/Button";
 
 function ErrorPage() {
   return (

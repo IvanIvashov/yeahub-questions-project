@@ -2,6 +2,8 @@ export interface Question {
   id: number;
   title: string;
   description: string;
-  rating?: number;
-  difficulty?: number;
+  rate?: number;
+  complexity?: number;
+  longAnswer?: string;
+  imageSrc?: string;
 }

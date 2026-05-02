@@ -1,10 +1,9 @@
-import { createContext, useState } from "react";
-import QuestionList from "../../../widgets/questionList/ui/QuestionList";
-import SideBar from "../../../widgets/sidebar/SideBar";
-import styles from "./style.module.css";
-import type { MyContext } from "../model/type";
+import { useState } from "react";
+import { QuestionList } from "@/widgets/questionList";
 
-export const SearchContext = createContext<MyContext | null>(null);
+import SideBar from "@widgets/sidebar";
+import styles from "./style.module.css";
+import { SearchContext } from "@/features/search/model/SearchContext";
 
 function MainContent() {
   const [searchValue, setSearchValue] = useState("");

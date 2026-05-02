@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Question } from "../type";
 
-export const useQuestions = () => {
+ const useQuestions = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -34,3 +34,5 @@ export const useQuestions = () => {
 
   return { questions, loading, error };
 };
+
+export default useQuestions;

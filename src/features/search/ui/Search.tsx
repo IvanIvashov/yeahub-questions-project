@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { SearchContext } from "../../../pages/MainPage/ui/MainContent";
+import { SearchContext } from "../model/SearchContext";
+
 import styles from "./style.module.css";
 import search from "../assets/search.svg";
 import close from "../assets/close.svg";
@@ -27,12 +28,13 @@ function Search() {
       />
 
       {searchValue && (
-        <img
+        <button
           className={styles.closeBtn}
-          src={close}
-          alt="Крестик для инпута"
+          aria-label="Очистить поиск"
           onClick={() => setSearchValue("")}
-        />
+        >
+          <img src={close} alt="Крестик для инпута" />
+        </button>
       )}
     </div>
   );

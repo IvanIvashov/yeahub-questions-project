@@ -1,9 +1,7 @@
 import ReactPaginate from "react-paginate";
-import styles from './style.module.css'
-import ArrowRight from "./arrowRight/ArrowRight";
-import ArrowLeft from "./arrowLeft/arrowLeft";
-
-
+import styles from "./style.module.css";
+import ArrowRight from "../arrowRight/ArrowRight";
+import ArrowLeft from "../arrowLeft/ArrowLeft";
 
 //  const handlePageClick = (event) => {
 //    const newOffset = (event.selected * itemsPerPage) % items.length;

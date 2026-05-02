@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
+import type {AccordionProps} from '../model/type'
 import iconArrow from "../assets/accordion.svg";
 import styles from "./style.module.css";
-import { Link } from "react-router-dom";
-import type {AccordionProps} from '../model/type'
 
-function Accordion({ question, img }: AccordionProps) {
+function Accordion({ question }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
 	
   return (
@@ -12,13 +12,21 @@ function Accordion({ question, img }: AccordionProps) {
       <div
         className={styles.accordionTitle}
         onClick={() => setIsOpen((prev) => !prev)}
+        role="button"
+        aria-expanded={isOpen}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            setIsOpen((prev) => !prev);
+          }
+        }}
       >
         <div className={styles.circle} />
         <h2 className={styles.heading}>{question.title}</h2>
         <button className={styles.btnAccordion}>
           <img
             src={iconArrow}
-            alt="arrowAccordion"
+            alt="Стрелка аккордиона"
             className={`${styles.btnTransition} ${isOpen ? styles.arrowRotate : ""}`}
           />
         </button>
@@ -33,7 +41,9 @@ function Accordion({ question, img }: AccordionProps) {
               Сложность: <span>{question.complexity}</span>
             </p>
           </div>
-          {img && <img src={question.imageSrc} alt="Описание вопросов" />}
+          {question.imageSrc && (
+            <img src={question.imageSrc} alt="Описание вопросов" />
+          )}
 
           <div className={styles.descriptions}>
             <p className={styles.descQuestion}>
@@ -42,7 +52,7 @@ function Accordion({ question, img }: AccordionProps) {
                 "Описание отсутствует"}
             </p>
           </div>
-          <Link to={"/details"} className={styles.detailsBtn}>
+          <Link to={`/details/${question.id}`} className={styles.detailsBtn}>
             Подробнее...
           </Link>
         </div>

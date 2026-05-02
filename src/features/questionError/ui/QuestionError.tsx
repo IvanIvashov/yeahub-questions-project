@@ -1,6 +1,6 @@
-import Button from "../../../shared/ui/Button/Button";
+import { Button } from "@/shared";
+import type { QuestionErrorProps } from "../model/type";
 import styles from "./style.module.css";
-import type {QuestionErrorProps} from '../model/type'
 
 function QuestionError({ error }: QuestionErrorProps) {
   return (
