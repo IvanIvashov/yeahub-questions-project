@@ -1,17 +1,16 @@
 import { useState } from "react";
 import iconArrow from "./assets/accordion.svg";
-import content from "./assets/content.png";
-import styles from './style.module.css'
+import styles from "./style.module.css";
 import { Link } from "react-router-dom";
 
-function Accordion() {
-	  const [isOpen, setIsOpen] = useState(false);
-	return (
-    <div className={styles.questionAccordion}>
-      <div
-        className={styles.accordionTitle}
-        onClick={() => setIsOpen((prev) => !prev)}
-      >
+function Accordion({ question, img }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div
+      className={styles.questionAccordion}
+      onClick={() => setIsOpen((prev) => !prev)}
+    >
+      <div className={styles.accordionTitle}>
         <svg
           width="8"
           height="8"
@@ -21,9 +20,7 @@ function Accordion() {
         >
           <circle cx="4" cy="4" r="4" fill="#5533FF" />
         </svg>
-        <h2 className={styles.heading}>
-          Что такое Virtual DOM, и как он работает?
-        </h2>
+        <h2 className={styles.heading}>{question.title}</h2>
         <button className={styles.btnAccordion}>
           <img
             src={iconArrow}
@@ -36,24 +33,19 @@ function Accordion() {
         <div className={styles.questionContent}>
           <div className={styles.ratingAndDifficulty}>
             <p>
-              Рейтинг: <span>4</span>
+              Рейтинг: <span>{question.rate}</span>
             </p>
             <p>
-              Сложность: <span>10</span>
+              Сложность: <span>{question.complexity}</span>
             </p>
           </div>
-          <img src={content} alt="Описание вопросов" />
+          {img && <img src={question.imageSrc} alt="Описание вопросов" />}
+
           <div className={styles.descriptions}>
             <p className={styles.descQuestion}>
-              Virtual DOM (виртуальный DOM) — это программная концепция,
-              используемая в разработке веб-приложений для повышения
-              эффективности обновлений интерфейса. Это представление реального
-              DOM (структуры документа, отображаемого в браузере) в памяти,
-              которое позволяет оптимизировать изменения, минимизируя
-              взаимодействие с реальным DOM, что ускоряет рендеринг и обновление
-              страниц. При изменении данных приложения Virtual DOM сравнивает
-              новое состояние с предыдущим и обновляет только те части реального
-              DOM, которые изменились, вместо перерисовки всего документа.
+              {question.longAnswer ||
+                question.description ||
+                "Описание отсутствует"}
             </p>
           </div>
           <Link to={"/details"} className={styles.detailsBtn}>
@@ -65,4 +57,4 @@ function Accordion() {
   );
 }
 
-export default Accordion
+export default Accordion;

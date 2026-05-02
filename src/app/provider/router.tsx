@@ -3,6 +3,7 @@ import App from "./../layout/App";
 import MainContent from "../../pages/MainPage/ui/MainContent";
 import HomePage from "../../pages/HomePage/HomePage";
 import QuestionDetails from "../../widgets/questionDetails/QuestionDetails";
+import ErrorPage from "../../pages/ErrorPage/ui/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
       { path: "/trainer", element: <QuestionDetails /> },
       { path: "/materials", element: <QuestionDetails /> },
       { path: "/skills", element: <QuestionDetails /> },
+      { path: "*", element: <ErrorPage/> },
     ],
   },
 ]);

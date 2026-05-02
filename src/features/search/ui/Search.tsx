@@ -1,8 +1,8 @@
 import { useContext } from "react";
+import { SearchContext } from "../../../pages/MainPage/ui/MainContent";
 import styles from "./style.module.css";
 import search from "../assets/search.svg";
 import close from "../assets/close.svg";
-import { SearchContext } from "../../../pages/MainPage/ui/MainContent";
 
 function Search() {
   const context = useContext(SearchContext);
@@ -11,7 +11,6 @@ function Search() {
   }
 
   const { searchValue, setSearchValue } = context;
-  console.log(searchValue);
 
   return (
     <div className={styles.search}>

@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  background: #fff;
+  border-radius: 24px;
+  width: 100%;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.titleError {
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 115%;
+  text-transform: uppercase;
+  color: #141414;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-weight: 500;
+  font-size: 20px;
+  color: #474747;
+  margin-bottom: 24px;
+}

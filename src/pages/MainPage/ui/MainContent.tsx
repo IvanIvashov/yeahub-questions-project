@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import QuestionList from "../../../widgets/questionList/QuestionList";
+import QuestionList from "../../../widgets/questionList/ui/QuestionList";
 import SideBar from "../../../widgets/sidebar/SideBar";
 import styles from "./style.module.css";
 import type { MyContext } from "../model/type";
