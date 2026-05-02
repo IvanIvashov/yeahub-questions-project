@@ -3,10 +3,6 @@ export type Items = {
   title: number | string;
 };
 
-// export type SkillsCard = {
-//   id: number;
-//   title: string;
-// };
 
 export type ItemsProps = {
   title: string,
@@ -14,16 +10,3 @@ export type ItemsProps = {
   showButton?: boolean;
 };
 
-// export type DifficultyLevel = {
-// 	id: number,
-// 	title: string,
-// }
-
-// export type Rating = {
-// 	id: number,
-// 	title: number | string
-// }
-// export type Status = {
-//   id: number;
-//   title: string;
-// };

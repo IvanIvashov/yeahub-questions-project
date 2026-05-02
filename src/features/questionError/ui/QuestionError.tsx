@@ -1,4 +1,4 @@
-import Button from "../../../shared/ui/ButtonWithError/Button";
+import Button from "../../../shared/ui/Button/Button";
 import styles from "./style.module.css";
 import type {QuestionErrorProps} from '../model/type'
 

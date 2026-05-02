@@ -1,25 +1,19 @@
 import { useState } from "react";
-import iconArrow from "./assets/accordion.svg";
+import iconArrow from "../assets/accordion.svg";
 import styles from "./style.module.css";
 import { Link } from "react-router-dom";
+import type {AccordionProps} from '../model/type'
 
-function Accordion({ question, img }) {
+function Accordion({ question, img }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
+	
   return (
-    <div
-      className={styles.questionAccordion}
-      onClick={() => setIsOpen((prev) => !prev)}
-    >
-      <div className={styles.accordionTitle}>
-        <svg
-          width="8"
-          height="8"
-          viewBox="0 0 8 8"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="4" cy="4" r="4" fill="#5533FF" />
-        </svg>
+    <div className={styles.questionAccordion}>
+      <div
+        className={styles.accordionTitle}
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        <div className={styles.circle} />
         <h2 className={styles.heading}>{question.title}</h2>
         <button className={styles.btnAccordion}>
           <img

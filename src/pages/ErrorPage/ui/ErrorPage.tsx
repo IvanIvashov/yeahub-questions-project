@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import styles from "./style.module.css";
 import errorPage from "../assets/errorPage.svg";
+import Button from "../../../shared/ui/Button/Button";
 
 function ErrorPage() {
-	const navigate = useNavigate()
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -13,9 +12,7 @@ function ErrorPage() {
           alt="Страница не найдена"
         />
         <p className={styles.desc}>Страница не найдена</p>
-        <button className={styles.prevBtn} onClick={() => navigate(-1)}>
-          Вернуться назад
-        </button>
+        <Button />
       </div>
     </div>
   );

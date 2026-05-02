@@ -1,4 +1,4 @@
-import Accordion from "../../../shared/ui/Accordion/Accordion";
+import Accordion from "../../../shared/ui/Accordion/ui/Accordion";
 import Pagination from "../../../features/pagination/ui/Pagination";
 import styles from "./style.module.css";
 import { useQuestions } from "../model/hook/useQuestion";

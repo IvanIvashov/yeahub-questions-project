@@ -11,7 +11,7 @@ export const useQuestions = () => {
       try {
         setLoading(true);
         const res = await fetch(
-          `https://api.yeatwork.ru/questions/public-questionss`,
+          `https://api.yeatwork.ru/questions/public-questions`,
         );
         if (!res.ok) throw new Error(`HTTP: ${res.status}`);
         const { data } = await res.json();
