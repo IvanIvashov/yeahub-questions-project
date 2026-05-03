@@ -1,15 +1,28 @@
 import { useState } from "react";
 import { QuestionList } from "@/widgets/questionList";
+import { SearchContext } from "@/entities/search/model/SearchContext";
 
 import SideBar from "@widgets/sidebar";
 import styles from "./style.module.css";
-import { SearchContext } from "@/features/search/model/SearchContext";
 
 function MainContent() {
   const [searchValue, setSearchValue] = useState("");
-	
+  const [specializationFilter, setSpecializationFilter] = useState<
+    number | null
+  >(null);
+  const [skillsFilter, setSkillsFilter] = useState<number | null>(null);
+
   return (
-    <SearchContext.Provider value={{ searchValue, setSearchValue }}>
+    <SearchContext.Provider
+      value={{
+        searchValue,
+        setSearchValue,
+        specializationFilter,
+        setSpecializationFilter,
+        skillsFilter,
+        setSkillsFilter,
+      }}
+    >
       <div className={styles.wrapper}>
         <QuestionList />
         <SideBar />

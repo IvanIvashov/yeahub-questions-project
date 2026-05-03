@@ -1,17 +1,19 @@
 import { Accordion } from "@shared/ui/Accordion";
 import { Pagination } from "@features/pagination";
 import { QuestionError } from "@features/questionError";
-import { useQuestions } from "@widgets/questionList";
+import { useSearchContext } from "@/entities/search/model/SearchContext";
+import useQuestions from "@entities/question/model/useQuestion";
 import styles from "./style.module.css";
 import Skeleton from "@/shared/ui/Skeleton/Skeleton";
-import { useContext } from "react";
-import { SearchContext } from "@/features/search/model/SearchContext";
 
 function QuestionList() {
-  const { searchValue } = useContext(SearchContext);
-  const { questions, loading, error, currentPage, totalPages } =
-    useQuestions(searchValue);
-
+  const { searchValue, specializationFilter, skillsFilter } =
+    useSearchContext();
+  const { questions, loading, error, currentPage, totalPages } = useQuestions(
+    searchValue,
+    specializationFilter,
+    skillsFilter,
+  );
 
   if (error) return <QuestionError error={error} />;
 

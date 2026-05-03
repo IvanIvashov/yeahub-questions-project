@@ -1,8 +1,13 @@
 import { useSearchParams } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
-import type { Question } from "../type";
+import type { Question } from "./type";
+import useDebounce from "@/shared/lib/hooks/useDebounce";
 
-const useQuestions = (searchValue) => {
+const useQuestions = (
+  searchValue: string,
+  specializationFilter,
+  skillsFilter,
+) => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -12,18 +17,25 @@ const useQuestions = (searchValue) => {
 
   const currentPage = Number(searchParams.get("page")) || 1;
 
+  const debouncedSearch = useDebounce(searchValue, 700);
+
   const setCurrentPage = useCallback(
     (page: number) => {
       setSearchParams({ page: page.toString() });
     },
     [setSearchParams],
   );
+
   useEffect(() => {
     const fetchQuestions = async () => {
+      setLoading(true);
       try {
-        setLoading(true);
+        const specializationsId = specializationFilter
+          ? `&specializationId=${specializationFilter}`
+          : "";
+        const skillsId = skillsFilter ? `&skills=${skillsFilter}` : "";
         const res = await fetch(
-          `https://api.yeatwork.ru/questions/public-questions?page=${currentPage}&limit=10&title=${searchValue}`,
+          `https://api.yeatwork.ru/questions/public-questions?page=${currentPage}&limit=10&titleOrDescription=${debouncedSearch}${specializationsId}${skillsId}`,
         );
         if (!res.ok) throw new Error(`HTTP: ${res.status}`);
 
@@ -47,7 +59,7 @@ const useQuestions = (searchValue) => {
     };
 
     fetchQuestions();
-  }, [currentPage, searchValue]);
+  }, [currentPage, debouncedSearch, specializationFilter, skillsFilter]);
 
   return { questions, loading, error, currentPage, setCurrentPage, totalPages };
 };

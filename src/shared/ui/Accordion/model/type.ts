@@ -1,6 +1,6 @@
-import type { Question } from "../../../../widgets/questionList/model/type";
+import type { Question } from "../../../../entities/question/model/type";
 
 export interface AccordionProps {
-  question: Question; 
+  question: Question;
   img?: string;
 }

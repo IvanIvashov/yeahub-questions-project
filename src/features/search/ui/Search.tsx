@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SearchContext } from "../model/SearchContext";
+import { SearchContext } from "../../../entities/search/model/SearchContext";
 
 import styles from "./style.module.css";
 import search from "../assets/search.svg";

@@ -1,27 +1,5 @@
 import type { Items } from "../model/types";
 
-export const SPECIALIZATION_CARD: Items[] = [
-  {
-    id: 1,
-    title: "UI/UX designer",
-  },
-  {
-    id: 2,
-    title: "Frontend developer",
-  },
-  {
-    id: 3,
-    title: "Backed developer",
-  },
-  {
-    id: 4,
-    title: "Fullstack",
-  },
-  {
-    id: 5,
-    title: "Figma",
-  },
-];
 
 export const SKILLS_CARD: Items[] = [
   {
