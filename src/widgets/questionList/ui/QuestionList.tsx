@@ -7,12 +7,19 @@ import styles from "./style.module.css";
 import Skeleton from "@/shared/ui/Skeleton/Skeleton";
 
 function QuestionList() {
-  const { searchValue, specializationFilter, skillsFilter } =
-    useSearchContext();
+  const {
+    searchValue,
+    specializationFilter,
+    skillsFilter,
+    rateFilter,
+    complexityFilter,
+  } = useSearchContext();
   const { questions, loading, error, currentPage, totalPages } = useQuestions(
     searchValue,
     specializationFilter,
     skillsFilter,
+    rateFilter,
+    complexityFilter,
   );
 
   if (error) return <QuestionError error={error} />;

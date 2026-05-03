@@ -5,8 +5,10 @@ import useDebounce from "@/shared/lib/hooks/useDebounce";
 
 const useQuestions = (
   searchValue: string,
-  specializationFilter,
-  skillsFilter,
+  specializationFilter: string,
+  skillsFilter: string,
+  rateFilter: string,
+  complexityFilter: string,
 ) => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
@@ -34,8 +36,12 @@ const useQuestions = (
           ? `&specializationId=${specializationFilter}`
           : "";
         const skillsId = skillsFilter ? `&skills=${skillsFilter}` : "";
+        const rating = rateFilter ? `&rate=${rateFilter}` : "";
+        const complexity = complexityFilter
+          ? `&complexity=${complexityFilter}`
+          : "";
         const res = await fetch(
-          `https://api.yeatwork.ru/questions/public-questions?page=${currentPage}&limit=10&titleOrDescription=${debouncedSearch}${specializationsId}${skillsId}`,
+          `https://api.yeatwork.ru/questions/public-questions?page=${currentPage}&limit=10&titleOrDescription=${debouncedSearch}${specializationsId}${skillsId}${rating}${complexity}`,
         );
         if (!res.ok) throw new Error(`HTTP: ${res.status}`);
 
@@ -59,7 +65,14 @@ const useQuestions = (
     };
 
     fetchQuestions();
-  }, [currentPage, debouncedSearch, specializationFilter, skillsFilter]);
+  }, [
+    currentPage,
+    debouncedSearch,
+    specializationFilter,
+    skillsFilter,
+    rateFilter,
+    complexityFilter,
+  ]);
 
   return { questions, loading, error, currentPage, setCurrentPage, totalPages };
 };

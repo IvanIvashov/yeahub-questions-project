@@ -1,5 +1,5 @@
 import Section from "@entities/section/ui/Section";
-import Search from "@features/search/ui/Search";
+import Search from "@entities/search/ui/Search";
 import styles from "./style.module.css";
 
 function SideBar() {

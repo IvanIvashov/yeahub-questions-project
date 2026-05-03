@@ -11,6 +11,9 @@ function MainContent() {
     number | null
   >(null);
   const [skillsFilter, setSkillsFilter] = useState<number | null>(null);
+	const [rateFilter, setRateFilter] = useState(null);
+const [complexityFilter, setComplexityFilter] = useState(null);
+
 
   return (
     <SearchContext.Provider
@@ -21,6 +24,10 @@ function MainContent() {
         setSpecializationFilter,
         skillsFilter,
         setSkillsFilter,
+        rateFilter,
+        setRateFilter,
+        complexityFilter,
+        setComplexityFilter,
       }}
     >
       <div className={styles.wrapper}>

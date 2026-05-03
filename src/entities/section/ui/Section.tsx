@@ -1,11 +1,12 @@
 import {
-  ItemsList,
   DIFFICULTY_LEVEL,
   RATING,
   STATUS,
-} from "../../../shared/ui/ItemsList";
+} from "@shared/ui/ItemsList/model/itemsListData";
+
 import { useSearchContext } from "@/entities/search/model/SearchContext";
 import useFetchList from "@/shared/lib/hooks/useFetch";
+import { ItemsList } from "@/shared/ui/ItemsList";
 
 function Section() {
   const {
@@ -13,6 +14,10 @@ function Section() {
     setSpecializationFilter,
     skillsFilter,
     setSkillsFilter,
+    rateFilter,
+    setRateFilter,
+    complexityFilter,
+    setComplexityFilter,
   } = useSearchContext();
 
   const specializations = useFetchList(
@@ -37,9 +42,19 @@ function Section() {
         setFiltered={setSkillsFilter}
       />
 
-      <ItemsList title="Уровень сложности" items={DIFFICULTY_LEVEL} />
-      <ItemsList title="Рейтинг" items={RATING} />
-      <ItemsList title="Статус" items={STATUS} />
+      <ItemsList
+        title="Уровень сложности"
+        data={DIFFICULTY_LEVEL}
+        filtered={complexityFilter}
+        setFiltered={setComplexityFilter}
+      />
+      <ItemsList
+        title="Рейтинг"
+        data={RATING}
+        filtered={rateFilter}
+        setFiltered={setRateFilter}
+      />
+      <ItemsList title="Статус" data={STATUS} />
     </>
   );
 }
