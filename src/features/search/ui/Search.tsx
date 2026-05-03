@@ -8,7 +8,7 @@ import close from "../assets/close.svg";
 function Search() {
   const context = useContext(SearchContext);
   if (!context) {
-    throw new Error("Search must be used within SearchContext.Provider");
+    throw new Error("Ошибка");
   }
 
   const { searchValue, setSearchValue } = context;

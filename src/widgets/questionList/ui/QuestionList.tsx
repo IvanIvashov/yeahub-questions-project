@@ -4,11 +4,17 @@ import { QuestionError } from "@features/questionError";
 import { useQuestions } from "@widgets/questionList";
 import styles from "./style.module.css";
 import Skeleton from "@/shared/ui/Skeleton/Skeleton";
+import { useContext } from "react";
+import { SearchContext } from "@/features/search/model/SearchContext";
 
 function QuestionList() {
-  const { questions, loading, error } = useQuestions();
+  const { searchValue } = useContext(SearchContext);
+  const { questions, loading, error, currentPage, totalPages } =
+    useQuestions(searchValue);
+
 
   if (error) return <QuestionError error={error} />;
+
   return (
     <div className={styles.questionList}>
       <div className={styles.container}>
@@ -22,7 +28,7 @@ function QuestionList() {
             ))}
       </div>
       <div className={styles.pagination}>
-        <Pagination />
+        <Pagination currentPage={currentPage} pageCount={totalPages} />
       </div>
     </div>
   );

@@ -1,23 +1,36 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import type {AccordionProps} from '../model/type'
+import { useState, useRef, useLayoutEffect } from "react";
+import type { AccordionProps } from "../model/type";
 import iconArrow from "../assets/accordion.svg";
 import styles from "./style.module.css";
 
 function Accordion({ question }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
-	
+  const [height, setHeight] = useState<number | string>(0);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (contentRef.current) {
+      const contentHeight = contentRef.current.scrollHeight;
+      setHeight(isOpen ? contentHeight : 0);
+    }
+  }, [isOpen, question]);
+
+  const toggleAccordion = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <div className={styles.questionAccordion}>
       <div
         className={styles.accordionTitle}
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={toggleAccordion}
         role="button"
         aria-expanded={isOpen}
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
-            setIsOpen((prev) => !prev);
+            toggleAccordion();
           }
         }}
       >
@@ -31,7 +44,17 @@ function Accordion({ question }: AccordionProps) {
           />
         </button>
       </div>
-      {isOpen && (
+
+
+      <div
+        ref={contentRef}
+        className={styles.accordionContent}
+        style={{
+          height: typeof height === "number" ? `${height}px` : height,
+          transition: "height 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          overflow: "hidden",
+        }}
+      >
         <div className={styles.questionContent}>
           <div className={styles.ratingAndDifficulty}>
             <p>
@@ -42,7 +65,7 @@ function Accordion({ question }: AccordionProps) {
             </p>
           </div>
           {question.imageSrc && (
-            <img src={question.imageSrc} alt="Описание вопросов" />
+            <img src={question.imageSrc} alt="Картинка с вопросом" />
           )}
 
           <div className={styles.descriptions}>
@@ -56,7 +79,7 @@ function Accordion({ question }: AccordionProps) {
             Подробнее...
           </Link>
         </div>
-      )}
+      </div>
     </div>
   );
 }

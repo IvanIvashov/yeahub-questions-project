@@ -90,3 +90,7 @@
 .disabled svg path {
   fill: #999;
 }
+.pagePoint {
+  display: flex;
+  cursor: pointer;
+}

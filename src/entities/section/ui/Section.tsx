@@ -8,6 +8,7 @@ import {
 } from "../../../shared/ui/ItemsList";
 
 function Section() {
+	
   return (
     <>
       <ItemsList title="Специализация" items={SPECIALIZATION_CARD} />
@@ -23,4 +24,6 @@ function Section() {
   );
 }
 
+
 export default Section;
+

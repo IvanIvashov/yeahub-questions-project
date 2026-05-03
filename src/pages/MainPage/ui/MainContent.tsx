@@ -7,6 +7,7 @@ import { SearchContext } from "@/features/search/model/SearchContext";
 
 function MainContent() {
   const [searchValue, setSearchValue] = useState("");
+	
   return (
     <SearchContext.Provider value={{ searchValue, setSearchValue }}>
       <div className={styles.wrapper}>
